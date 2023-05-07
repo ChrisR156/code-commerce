@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import userEvent from "@testing-library/user-event";
+import React, { useEffect, useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -16,20 +17,33 @@ const Navbar = () => {
   // };
 
   // let scrollEvent = document.getElementById('svimoni')
+ 
+//// Musha Scrollin JavaScriptit
 
-  window.addEventListener('scroll', ()=>{
-    if(window.pageYOffset > 50){
-      document.getElementById('svimoni').style.backgroundColor = 'rgba(225,225,225,0.9)'
-      document.getElementById('svimoni').style.color = 'black'
-      document.getElementById('svimoni').style.height = '3rem'
-      document.getElementById('aqvsenti').style.color = 'black'
-    } else{
-      document.getElementById('svimoni').style.backgroundColor = 'white'
-      document.getElementById('svimoni').style.color = '#00df9a'
-      document.getElementById('svimoni').style.height = '6rem'
-      document.getElementById('aqvsenti').style.color = '#00df9a'
-    }
-  })
+  useEffect(() => {
+    window.addEventListener('scroll', ()=>{
+      if(window.pageYOffset > 50){
+        document.getElementById('svimoni').style.backgroundColor = 'rgba(225,225,225,0.9)'
+        document.getElementById('svimoni').style.color = 'black'
+        document.getElementById('svimoni').style.height = '3rem'
+        document.getElementById('aqvsenti').style.color = 'black'
+      } else{
+        document.getElementById('svimoni').style.backgroundColor = 'white'
+        document.getElementById('svimoni').style.color = '#00df9a'
+        document.getElementById('svimoni').style.height = '6rem'
+        document.getElementById('aqvsenti').style.color = '#00df9a'
+      }
+    })
+  }, [])
+
+// const [scrollEffect, setScrollEffect] = useState (false)
+
+// const scrollDown = () => {
+//   if (window.scrollY > 50){
+//     setScrollEffect(false)
+//   }
+// }
+
 
   
 

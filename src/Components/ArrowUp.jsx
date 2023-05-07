@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {MdOutlineKeyboardArrowUp} from 'react-icons/md'
 
 // var arrowHide = document.getElementById('jumberi')
@@ -11,24 +11,26 @@ import {MdOutlineKeyboardArrowUp} from 'react-icons/md'
 
 const ArrowUp = () => {
 
-    
-  window.addEventListener('scroll', ()=>{
-    if (window.pageYOffset > 50){
-        document.getElementById('jumberi').style.opacity = '1'
-        document.getElementById('jumberi').style.cursor = 'pointer'
-    } else {
-        document.getElementById('jumberi').style.opacity = '0'
-        document.getElementById('jumberi').style.cursor = 'default'
-    }
-})
-
-let scrollClick = document.getElementById('jumberi')
-
-scrollClick.addEventListener('click', (e)=>{
-    if(e){
-        window.scrollTo({top:0, behavior:'smooth'})
-    }
-})
+  useEffect(() => {
+    window.addEventListener('scroll', ()=>{
+      if (window.pageYOffset > 50){
+          document.getElementById('jumberi').style.opacity = '1'
+          document.getElementById('jumberi').style.cursor = 'pointer'
+      } else {
+          document.getElementById('jumberi').style.opacity = '0'
+          document.getElementById('jumberi').style.cursor = 'default'
+      }
+  })
+  
+  let scrollClick = document.getElementById('jumberi')
+  
+  scrollClick.addEventListener('click', (e)=>{
+      if(e){
+          window.scrollTo({top:0, behavior:'smooth'})
+      }
+  })
+  }, [])                                                   
+  
 
    
 
