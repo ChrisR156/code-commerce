@@ -20,29 +20,48 @@ const Navbar = () => {
  
 //// Musha Scrollin JavaScriptit
 
+  // useEffect(() => {
+  //   window.addEventListener('scroll', ()=>{
+  //     if(window.pageYOffset > 50){
+  //       document.getElementById('svimoni').style.backgroundColor = 'rgba(225,225,225,0.9)'
+  //       document.getElementById('svimoni').style.color = 'black'
+  //       document.getElementById('svimoni').style.height = '3rem'
+  //       document.getElementById('aqvsenti').style.color = 'black'
+  //     } else{
+  //       document.getElementById('svimoni').style.backgroundColor = 'white'
+  //       document.getElementById('svimoni').style.color = '#00df9a'
+  //       document.getElementById('svimoni').style.height = '6rem'
+  //       document.getElementById('aqvsenti').style.color = '#00df9a'
+  //     }
+  //   })
+  // }, [])
+  
+  // const [scrollEffect, setScrollEffect] = useState (false)
+  
+  // const scrollDown = () => {
+  //   if (window.scrollY > 50){
+  //     setScrollEffect(false)
+  //   }
+  // }
+
   useEffect(() => {
-    window.addEventListener('scroll', ()=>{
-      if(window.pageYOffset > 50){
-        document.getElementById('svimoni').style.backgroundColor = 'rgba(225,225,225,0.9)'
-        document.getElementById('svimoni').style.color = 'black'
+    window.addEventListener('scroll', () =>{
+      if (window.scrollY > 50){
         document.getElementById('svimoni').style.height = '3rem'
+        document.getElementById('svimoni').style.backgroundColor = 'rgba(225,225,225,0.9)'
         document.getElementById('aqvsenti').style.color = 'black'
+        document.getElementById('onopre').style.color = 'black'
+        document.getElementById('engelberti').style.color = 'black'
       } else{
-        document.getElementById('svimoni').style.backgroundColor = 'white'
-        document.getElementById('svimoni').style.color = '#00df9a'
         document.getElementById('svimoni').style.height = '6rem'
+        document.getElementById('svimoni').style.backgroundColor = 'white'
         document.getElementById('aqvsenti').style.color = '#00df9a'
+        document.getElementById('onopre').style.color = '#00df9a'
+        document.getElementById('engelberti').style.color = '#00df9a'
       }
     })
   }, [])
 
-// const [scrollEffect, setScrollEffect] = useState (false)
-
-// const scrollDown = () => {
-//   if (window.scrollY > 50){
-//     setScrollEffect(false)
-//   }
-// }
 
 
   
@@ -51,14 +70,14 @@ const Navbar = () => {
     <div className="fixed w-[100%] z-50">
     <div id="svimoni" className="Zviadi transition-all duration-[400ms] rounded-b-xl flex justify-between w-[95%] mx-auto px-4 items-center h-24 text-[#00df9a] bg-white ">
       <h1 id="aqvsenti" className="w-full text-3xl font-bold text-[#00df9a]">React.</h1>
-      <ul className="hidden md:flex">
+      <ul id="onopre" className="hidden md:flex">
         <li className="p-4">Home</li>
         <li className="p-4">Company</li>
         <li className="p-4">Resources</li>
         <li className="p-4">About</li>
         <li className="p-4">Contact</li>
       </ul>
-      <div onClick={handleNav} className="block md:hidden">
+      <div id='engelberti' onClick={handleNav} className="block md:hidden">
         {!nav ? (
           <AiOutlineClose size={20} cursor="pointer" />
         ) : (
